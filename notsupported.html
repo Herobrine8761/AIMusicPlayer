@@ -27,6 +27,23 @@
             margin-top: 10px;
         }
     </style>
+    <script>
+        function checkDevice(){
+        // Get the user agent string
+        var userAgent = navigator.userAgent;
+
+        // Check if the user agent contains keywords indicating a PC/Mac
+        var isPC = /Windows|Macintosh/.test(userAgent);
+
+        // Redirect to another page if not a PC/Mac/Browser
+        if (isPC) {
+          window.location.href = 'index.html';
+        }
+    }
+
+    // Call the checkDevice function when the page loads
+        window.onload = checkDevice;
+    </script>
 </head>
 <body>
     <h1>Device not supported</h1>
