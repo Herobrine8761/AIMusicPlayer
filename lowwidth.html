@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="music.ico">
+    <title>Width Too Low</title>
+    <style>
+        body {
+            background-color: #222; /* Dark color (black-ish) */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, p {
+            font-size: 35px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function checkDevice(){
+            // Get the user agent string.
+            var userAgent = navigator.userAgent;
+
+            // Check if the user agent contains keywords indicating a PC/Mac.
+            var isPC = /Windows|Macintosh/.test(userAgent);
+
+            // Redirect to notsupported.html if not a PC/Mac.
+            if (!isPC) {
+                window.location.href = 'notsupported.html';
+            }
+            else{
+                if(window.innerWidth > 1035){
+                    window.location.href = 'index.html'
+                }
+            }
+        }
+
+        // Call the checkDevice function when the page loads
+        window.onload = checkDevice;
+    </script>
+</head>
+<body>
+    <h1>Width Too Low!</h1>
+    <p>The width of your device is less than the suggested limit of 1035px!</p>
+</body>
+</html>
